@@ -5,9 +5,7 @@ const app = express();
 
 //Router Middlewares
 app.use(express.json());
-app.get('/', ()=>{
-    console.log('get api');
-})
+
 app.use('/weather', weatherRoutes);
 
 app.listen(3000, ()=>{

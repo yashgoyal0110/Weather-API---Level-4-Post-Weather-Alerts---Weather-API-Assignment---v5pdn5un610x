@@ -19,7 +19,7 @@ async function saveDataToDatabase(data) {
       if (err) {
         reject(err);
       } else {
-        resolve(true);
+        resolve();
       }
     });
   });
@@ -47,7 +47,8 @@ async function saveWeatherAlert(alertDetails) {
   const existingData = await getDataFromDatabase();
   const alerts = Array.isArray(existingData) ? existingData : [];
   alerts.push(alertDetails);
-  return await saveDataToDatabase(alerts);
+  await saveDataToDatabase(alerts);
+  return true
 }
 
 module.exports = {
