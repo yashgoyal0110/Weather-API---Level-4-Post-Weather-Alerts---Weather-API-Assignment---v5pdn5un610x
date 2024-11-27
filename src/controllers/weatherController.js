@@ -2,7 +2,7 @@ const fs = require('fs');
 
 async function getDataFromDatabase() {
   return new Promise((resolve, reject) => {
-    fs.readFile('src/data/data.json', (err, data) => {
+    fs.readFile('./data/data.json', (err, data) => {
       if (err) {
         reject(err);
       } else {
@@ -15,11 +15,11 @@ async function getDataFromDatabase() {
 async function saveDataToDatabase(data) {
   return new Promise((resolve, reject) => {
     const jsonData = JSON.stringify(data);
-    fs.writeFile('src/data/data.json', jsonData, (err) => {
+    fs.writeFile('./data/data.json', jsonData, (err) => {
       if (err) {
         reject(err);
       } else {
-        resolve();
+        resolve(true);
       }
     });
   });
@@ -46,7 +46,11 @@ async function saveDataToDatabase(data) {
 
 // Level 4: Post Weather Alerts
 async function saveWeatherAlert(alertDetails) {
-   // TODO: Implement this function
+  const existingData = await getDataFromDatabase();
+  const alerts = Array.isArray(existingData) ? existingData : [];
+  console.log('alerts', alerts);
+  alerts.push(alertDetails);
+return await saveDataToDatabase(alerts)
 }
 
 module.exports = {

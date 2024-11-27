@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const weatherController = require('../controllers/weatherController');
+const weatherController = require("../controllers/weatherController");
 
 /*
   Instructions for students:
@@ -34,11 +34,24 @@ const weatherController = require('../controllers/weatherController');
     - Return the appropriate success or error message based on the outcome.
 */
 
-
-
 // Level 4: Post Weather Alerts
-router.post('/alerts', async (req, res) => {
-   // TODO: Implement this function
+router.post("/alerts", async (req, res) => {
+  const { city, date, humidity } = req.body;
+  let data = await weatherController.saveWeatherAlert({ city, date, humidity });
+  if (data) {
+    console.log(data);
+    return res.status(200).json({
+      status: "success",
+      message: "Weather alert saved successfully",
+    });
+  }
+  return res
+    .status(404)
+    .json({
+      status: "error",
+      message: "Failed to save weather alert",
+      error: "Failed to save weather alert",
+    });
 });
 
 module.exports = router;
