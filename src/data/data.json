@@ -1,18 +1,6 @@
 [
   { "city": "xyz", "date": "1", "humidity": "a" },
-  { "city": "xyz", "date": "1", "humidity": "a" },
-  { "city": "xyz", "date": "1", "humidity": "a" },
-  { "city": "xyz", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
-  { "city": "new", "date": "1", "humidity": "a" },
+  { "city": "new1", "date": "1", "humidity": "a" },
+  { "city": "new1", "date": "1", "humidity": "a" },
   { "city": "new1", "date": "1", "humidity": "a" }
 ]
