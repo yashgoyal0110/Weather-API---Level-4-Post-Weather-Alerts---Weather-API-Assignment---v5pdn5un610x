@@ -2,7 +2,7 @@ const fs = require("fs");
 
 async function getDataFromDatabase() {
   return new Promise((resolve, reject) => {
-    fs.readFile("./data/data.json", (err, data) => {
+    fs.readFile("src/data/data.json", (err, data) => {
       if (err) {
         reject(err);
       } else {
@@ -15,7 +15,7 @@ async function getDataFromDatabase() {
 async function saveDataToDatabase(data) {
   return new Promise((resolve, reject) => {
     const jsonData = JSON.stringify(data);
-    fs.writeFile("./data/data.json", jsonData, (err) => {
+    fs.writeFile("src/data/data.json", jsonData, (err) => {
       if (err) {
         reject(err);
       } else {

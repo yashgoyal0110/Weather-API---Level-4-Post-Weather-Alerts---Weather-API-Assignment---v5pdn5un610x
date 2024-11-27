@@ -44,13 +44,11 @@ router.post("/alerts", async (req, res) => {
       message: "Weather alert saved successfully",
     });
   }
-  return res
-    .status(404)
-    .json({
-      status: "error",
-      message: "Failed to save weather alert",
-      error: "Failed to save weather alert",
-    });
+  return res.status(404).json({
+    status: "error",
+    message: "Failed to save weather alert",
+    error: "Failed to save weather alert",
+  });
 });
 
 module.exports = router;
